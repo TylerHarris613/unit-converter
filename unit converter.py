@@ -10,20 +10,40 @@
 # Program is broken into user input, GUI menu, conversion calc
 # Next progression is to provide user with ability to bulk upload via xlsx conversions to be calculated. Program will then return an xlsx including the finished calcs
 
+conversionDict = {''}
 
 
 def userInput():
+    
+    # User input for category type conversion
     try:
         userCategory = input("Which category of unit conversion would you like?\n")
         print(f"Your user category is {userCategory}")
     except ValueError:
         print("That is not an available category type. Please select from length, weight, or temperature to convert :)\n")
         return None
-    return userCategory
+    
+    # User input for metric vs imperial measurement conversion
+    try:
+        userSystem = input("From which measurement system to you want to convert? Imperial or Metric?\n")
+        print(f"Your user system is {userSystem}")
+    except ValueError:
+        print("That is not an available measurement type. Please decide if you want to start with imperial or metric :)\n")
+        return None
+    
+    # User input for value conversion
+    try:
+        userValue = float(input(f"What value do you want to convert from {userSystem} to?"))
+        print(f"Your user value is {userValue}")
+    except ValueError:
+        print("Wrong type of input dummy. Jk you are good. But you do need to input a numeral figure. Don't get it wrong!\n")
+        return None
+    
+    return userCategory, userSystem, userValue
 
 
 
-def conversionCalc():
+def conversionCalc(userCategory):
 
 
 while True:
