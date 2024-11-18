@@ -13,6 +13,15 @@
 
 
 def userInput():
+    try:
+        userCategory = input("Which category of unit conversion would you like?\n")
+        print(f"Your user category is {userCategory}")
+    except ValueError:
+        print("That is not an available category type. Please select from length, weight, or temperature to convert :)\n")
+        return None
+    return userCategory
+
+
 
 def conversionCalc():
 
