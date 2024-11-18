@@ -12,38 +12,51 @@
 
 conversionDict = {''}
 
+lengthList = ["Millimeter", "Centimeter", "Meter", "Inches", "Feet", "Yard", "Mile"]
+widthList = ["Gram", "Kilogram", "Tonne", "Ounce", "Pound"]
+TempList = ["Celsius", "Farenheit"]
+
+metricLength = []
+metricWeight = []
+metricTemp = []
+
+imperialLength = []
+imperialWeight = []
+imperialTemp = []
+
 
 def userInput():
     
     # User input for category type conversion
     try:
-        userCategory = input("Which category of unit conversion would you like?\n")
-        print(f"Your user category is {userCategory}")
+        userCategoryStart = input("Which category of unit conversion would you like? Eg. Feet, Pounds, or Farenheit\n")
+        print(f"Your user category is {userCategoryStart}")
     except ValueError:
         print("That is not an available category type. Please select from length, weight, or temperature to convert :)\n")
         return None
     
     # User input for metric vs imperial measurement conversion
     try:
-        userSystem = input("From which measurement system to you want to convert? Imperial or Metric?\n")
-        print(f"Your user system is {userSystem}")
+        userCategoryEnd = input("Which measurement would you like to convert to?\n")
+        print(f"Your user system is {userCategoryEnd}")
     except ValueError:
-        print("That is not an available measurement type. Please decide if you want to start with imperial or metric :)\n")
+        print("That is not an available category type. Please select from length, weight, or temperature to convert :)\n")
         return None
     
     # User input for value conversion
     try:
-        userValue = float(input(f"What value do you want to convert from {userSystem} to?"))
+        userValue = float(input(f"What value do you want to convert from {userCategoryEnd} to?"))
         print(f"Your user value is {userValue}")
     except ValueError:
         print("Wrong type of input dummy. Jk you are good. But you do need to input a numeral figure. Don't get it wrong!\n")
         return None
     
-    return userCategory, userSystem, userValue
+    return userCategoryStart, userCategoryEnd, userValue
 
 
 
-def conversionCalc(userCategory):
+def conversionCalc(userCatStart, userCatEnd, userVal):
+    if userCatStart and userCatEnd in 
 
 
 while True:
